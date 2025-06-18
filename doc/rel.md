@@ -28,13 +28,13 @@ O projeto foi pensado para ser visualmente apelativo, responsivo e acessível em
 #### Wireframe
 
 - **Wireframe :**
-  - ![Wireframe](images/wireframe.png)
+  - ![Wireframe](img/wireframe.png)
 
 
 #### Sitemap
 
 - **Sitemap :**
-  - ![Sitemap](images/sitemap.png)
+  - ![Sitemap](img/sitemap.png)
 
 
 
