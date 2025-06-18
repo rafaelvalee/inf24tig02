@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>XML - Guia Interativo</title>
+  <link rel="stylesheet" href="style/estilos.css" />
+  <style>
+    .feedback { margin-left: 1rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="header-container">
+    <a href="index.html" class="logo-link">
+      <img src="img/logo.png" alt="LOGO" class="logo-img" loading="lazy">
+      <span class="logo-text">Aprender a Programar</span>
+    </a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="linguagens.html">Linguagens</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <section>
+      <h2>O que é o XML?</h2>
+      <p>
+        XML (<em>eXtensible Markup Language</em>) é uma linguagem de marcação usada para armazenar e transportar dados de forma estruturada, legível por humanos e máquinas. Muito usada para trocar informação entre sistemas, configurar aplicações e armazenar dados.
+      </p>
+    </section>
+
+    <section>
+      <h2>Estrutura básica de um ficheiro XML</h2>
+      <div class="ide-sim">
+        <pre><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;linguagens&gt;
+  &lt;linguagem&gt;
+    &lt;nome&gt;Python&lt;/nome&gt;
+    &lt;dificuldade&gt;Fácil&lt;/dificuldade&gt;
+  &lt;/linguagem&gt;
+&lt;/linguagens&gt;
+        </code></pre>
+      </div>
+      <ul>
+        <li>Só pode haver um elemento raiz (neste exemplo: <code>&lt;linguagens&gt;</code>).</li>
+        <li>Tags são sensíveis à ordem e ao fecho correto.</li>
+        <li>Podes criar qualquer estrutura de tags, mas deve ser consistente.</li>
+      </ul>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> O que acontece se um ficheiro XML não tiver elemento raiz?</label><br>
+        <input type="radio" name="q1" value="a"> Funciona na mesma<br>
+        <input type="radio" name="q1" value="b"> Dá erro de validação<br>
+        <input type="radio" name="q1" value="c"> Só funciona se for aberto num browser<br>
+        <button type="button" onclick="avaliarQuiz(1, 'b')">Responder</button>
+        <span class="feedback" id="feedback-q1"></span>
+      </form>
+    </section>
+<br><br>
+    <section>
+      <h2>Atributos e elementos</h2>
+      <p>
+        Podes representar informação com elementos ou atributos. <br>
+        Exemplo com atributos:
+      </p>
+      <div class="ide-sim">
+        <pre><code>
+&lt;aluno nome="Rafael" idade="19" curso="Informática" /&gt;
+        </code></pre>
+      </div>
+      <p>
+        Exemplo equivalente só com elementos:
+      </p>
+      <div class="ide-sim">
+        <pre><code>
+&lt;aluno&gt;
+  &lt;nome&gt;Rafael&lt;/nome&gt;
+  &lt;idade&gt;19&lt;/idade&gt;
+  &lt;curso&gt;Informática&lt;/curso&gt;
+&lt;/aluno&gt;
+        </code></pre>
+      </div>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> Qual destas vantagens NÃO se aplica ao uso de atributos em XML?</label><br>
+        <input type="radio" name="q2" value="a"> São mais fáceis de processar<br>
+        <input type="radio" name="q2" value="b"> Permitem guardar múltiplos valores com o mesmo nome<br>
+        <input type="radio" name="q2" value="c"> Tornam o documento mais compacto<br>
+        <button type="button" onclick="avaliarQuiz(2, 'b')">Responder</button>
+        <span class="feedback" id="feedback-q2"></span>
+      </form>
+    </section>
+<br><br>
+    <section>
+      <h2>Validação com XML Schema (XSD)</h2>
+      <p>
+        Um ficheiro <strong>XSD</strong> define as regras (estrutura, tipos, restrições) que um XML deve cumprir.<br>
+        Exemplo de referência a um schema (namespace):
+      </p>
+      <div class="ide-sim">
+        <pre><code>
+&lt;linguagens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="linguagens.xsd"&gt;
+...
+&lt;/linguagens&gt;
+        </code></pre>
+      </div>
+      <ul>
+        <li>Podes validar o teu XML com ferramentas como <a href="https://www.freeformatter.com/xml-validator-xsd.html" target="_blank">FreeFormatter XML Validator</a>.</li>
+      </ul>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> Para que serve o ficheiro XSD associado a um XML?</label><br>
+        <input type="radio" name="q3" value="a"> Garantir que o XML tem a estrutura certa<br>
+        <input type="radio" name="q3" value="b"> Guardar as imagens do site<br>
+        <input type="radio" name="q3" value="c"> Proteger o XML com senha<br>
+        <button type="button" onclick="avaliarQuiz(3, 'a')">Responder</button>
+        <span class="feedback" id="feedback-q3"></span>
+      </form>
+    </section>
+<br><br>
+    <section>
+      <h2>XML vs JSON</h2>
+      <p>
+        Atualmente, muitos sistemas usam <strong>JSON</strong> em vez de XML, mas XML continua fundamental em áreas como configuração, documentos oficiais, interoperabilidade e standards.
+      </p>
+      <div class="ide-sim">
+        <pre><code>
+// JSON equivalente ao exemplo anterior
+{
+  "aluno": {
+    "nome": "Rafael",
+    "idade": 19,
+    "curso": "Informática"
+  }
+}
+        </code></pre>
+      </div>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> Qual destas vantagens é do JSON face ao XML?</label><br>
+        <input type="radio" name="q4" value="a"> Mais legível por humanos<br>
+        <input type="radio" name="q4" value="b"> Aceita comentários no ficheiro<br>
+        <input type="radio" name="q4" value="c"> É menos compatível com browsers<br>
+        <button type="button" onclick="avaliarQuiz(4, 'a')">Responder</button>
+        <span class="feedback" id="feedback-q4"></span>
+      </form>
+    </section>
+
+    <section>
+      <h2>Boas práticas & Dicas rápidas</h2>
+      <ul>
+        <li>Não uses espaços em nomes de tags ou atributos.</li>
+        <li>Não podes repetir nomes de atributos no mesmo elemento.</li>
+        <li>Evita usar acentos ou caracteres especiais nas tags.</li>
+        <li>Sempre fecha todas as tags, mesmo que estejam vazias (<code>&lt;exemplo /&gt;</code>).</li>
+        <li>Valida sempre o teu XML com uma ferramenta apropriada.</li>
+      </ul>
+      <p>
+        <a href="linguagens.xml" download>Descarregar ficheiro XML de exemplo</a>
+      </p>
+    </section>
+<br><br>
+    <section>
+      <h2>Queres aprender mais?</h2>
+      <ul>
+        <li><a href="https://www.w3schools.com/xml/" target="_blank">W3Schools XML Tutorial</a></li>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/XML/XML_introduction" target="_blank">MDN Web Docs - Introdução ao XML</a></li>
+        <li><a href="https://www.youtube.com/watch?v=E-NciVkZFVs" target="_blank">O que é XML? (YouTube)</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Aprender a Programar</p>
+  </footer>
+  <script>
+    function avaliarQuiz(num, certa) {
+      const radios = document.getElementsByName("q" + num);
+      let val = "";
+      for (const radio of radios) if (radio.checked) val = radio.value;
+      const feedback = document.getElementById("feedback-q" + num);
+      if (!val) { feedback.textContent = "Seleciona uma opção!"; feedback.style.color = "orange"; return; }
+      if (val === certa) { feedback.textContent = "Certo!"; feedback.style.color = "green"; }
+      else { feedback.textContent = "Errado!"; feedback.style.color = "red"; }
+    }
+  </script>
+</body>
+</html>

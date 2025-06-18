@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Linguagens de Programação</title>
+  <link rel="stylesheet" href="style/estilos.css" />
+</head>
+<body>
+  <header>
+  <div class="header-container">
+    <a href="index.html" class="logo-link">
+      <img src="img/logo.png" alt="LOGO" class="logo-img" loading="lazy">
+      <span class="logo-text">Aprender a Programar</span>
+    </a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="linguagens.html">Linguagens</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <section>
+      <h2>Resumo em Tabela</h2>
+      <div id="tabela-linguagens"></div>
+    </section>
+
+    <section>
+      <h2>Descrição das Linguagens</h2>
+    </section>
+<!--python-->
+    <section class="linguagens-grid aparece-devagar" >
+      <article onclick="location.href='lang/python.html'" style="cursor:pointer;">
+        <h3>Python</h3>
+        <p>O Python é uma linguagem de programação de alto nível, conhecida pela sua simplicidade e legibilidade...</p>
+        <div class="ide-sim">
+          <pre><code># Exemplo simples em Python
+def saudacao(nome):
+    print(f"Olá, {nome}!")
+saudacao("Mundo")</code></pre>
+        </div>
+        <div style="text-align:center; margin-top: 1rem;">
+          <iframe width="360" height="203" src="https://www.youtube.com/embed/kqtD5dpn9C8" 
+            title="Python para Iniciantes" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </article>
+<!--html-->
+      <article onclick="location.href='lang/html.html'" style="cursor:pointer;">
+        <h3>HTML</h3>
+        <p>HTML é a linguagem de marcação padrão usada para estruturar o conteúdo de páginas web...</p>
+        <div class="ide-sim">
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Exemplo&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Olá Mundo&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+        <div style="text-align:center; margin-top: 1rem;">
+          <iframe width="360" height="203" src="https://www.youtube.com/embed/UB1O30fR-EE" 
+            title="HTML Tutorial Completo" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </article>
+<!--javascript-->
+      <article onclick="location.href='lang/javascript.html'" style="cursor:pointer;">
+        <h3>JavaScript</h3>
+        <p>O JavaScript é a linguagem que dá vida às páginas web. Permite criar interatividade...</p>
+        <div class="ide-sim">
+          <pre><code>// Exemplo de JS
+function saudacao(nome) {
+  alert("Olá, " + nome + "!");
+}
+saudacao("Mundo");</code></pre>
+        </div>
+        <div style="text-align:center; margin-top: 1rem;">
+          <iframe width="360" height="203" src="https://www.youtube.com/embed/hdI2bqOjy3c" 
+            title="Curso Introdutório de JavaScript" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </article>
+<!--xml-->
+      <article onclick="location.href='lang/xml.html'" style="cursor:pointer;">
+        <h3>XML</h3>
+        <p>O XML é uma linguagem de marcação usada para armazenar e transportar dados estruturados...</p>
+        <div class="ide-sim">
+          <pre><code>&lt;linguagem&gt;
+  &lt;nome&gt;Python&lt;/nome&gt;
+  &lt;dificuldade&gt;Fácil&lt;/dificuldade&gt;
+&lt;/linguagem&gt;</code></pre>
+        </div>
+        <div style="text-align:center; margin-top: 1rem;">
+          <iframe width="360" height="203" src="https://www.youtube.com/embed/E-NciVkZFVs?si=-iD9tbemuKXlb6hS" 
+            title="O que é XML?" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </article>
+    </section>
+  </main>
+  
+
+  <footer>
+    <p>&copy; 2025 Aprender a Programar</p>
+  </footer>
+
+  <script src="linguagens.js"></script>
+</body>
+</html>

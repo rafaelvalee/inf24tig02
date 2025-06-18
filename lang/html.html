@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML - Guia Interativo</title>
+  <link rel="stylesheet" href="style/estilos.css" />
+  <style>
+    .feedback { margin-left: 1rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="header-container">
+    <a href="index.html" class="logo-link">
+      <img src="img/logo.png" alt="LOGO" class="logo-img" loading="lazy">
+      <span class="logo-text">Aprender a Programar</span>
+    </a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="linguagens.html">Linguagens</a>
+    </nav>
+  </div>
+</header>
+  <main>
+    <section>
+      <h2>O que é o HTML?</h2>
+      <p>
+        HTML (<em>HyperText Markup Language</em>) é a linguagem usada para estruturar o conteúdo das páginas web. Não é uma linguagem de programação, mas sim de marcação.
+      </p>
+    </section>
+
+    <section>
+      <h2>Estrutura de um documento HTML</h2>
+      <div class="ide-sim">
+        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Exemplo&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+      </div>
+      <ul>
+        <li><strong>&lt;!DOCTYPE html&gt;</strong> – define que o documento é HTML5.</li>
+        <li><strong>&lt;head&gt;</strong> – metadados, título, links para CSS/JS.</li>
+        <li><strong>&lt;body&gt;</strong> – o conteúdo visível na página.</li>
+      </ul>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> O que acontece se esquecer o &lt;!DOCTYPE html&gt;?</label><br>
+        <input type="radio" name="q1" value="a"> O browser mostra um erro e não abre a página<br>
+        <input type="radio" name="q1" value="b"> O browser entra em "modo de compatibilidade" e pode interpretar mal o HTML<br>
+        <input type="radio" name="q1" value="c"> Nada, é indiferente<br>
+        <button type="button" onclick="avaliarQuiz(1, 'b')">Responder</button>
+        <span class="feedback" id="feedback-q1"></span>
+      </form>
+    </section>
+<br><br>
+    <section>
+      <h2>Elementos, atributos e semântica</h2>
+      <p>
+        O HTML é composto por <strong>elementos</strong> (tags) e pode ter <strong>atributos</strong> que fornecem informações extra.<br>
+        A escolha correta de elementos semânticos ajuda o browser e leitores de ecrã a entender melhor o conteúdo.
+      </p>
+      <div class="ide-sim">
+        <pre><code>
+&lt;article class="noticia" data-id="27"&gt;
+  &lt;h2&gt;Novidade&lt;/h2&gt;
+  &lt;p&gt;Saiu uma nova versão do HTML!&lt;/p&gt;
+&lt;/article&gt;
+        </code></pre>
+      </div>
+      <ul>
+        <li>O atributo <code>class</code> serve para aplicar estilos (CSS).</li>
+        <li>O atributo <code>data-id</code> é um atributo personalizado (útil para JS).</li>
+      </ul>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> Qual destes elementos é considerado semântico?</label><br>
+        <input type="radio" name="q2" value="div">&lt;div&gt;<br>
+        <input type="radio" name="q2" value="section">&lt;section&gt;<br>
+        <input type="radio" name="q2" value="span">&lt;span&gt;<br>
+        <button type="button" onclick="avaliarQuiz(2, 'section')">Responder</button>
+        <span class="feedback" id="feedback-q2"></span>
+      </form>
+    </section>
+<br><br>
+    <section>
+      <h2>Listas, tabelas e imagens</h2>
+      <p>
+        Para organizar informação, podes usar listas ordenadas, não ordenadas ou de definições.
+      </p>
+      <div class="ide-sim">
+        <pre><code>
+&lt;ul&gt;
+  &lt;li&gt;Python&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+&lt;/ul&gt;
+        </code></pre>
+      </div>
+      <p>
+        Tabelas devem ter cabeçalho, corpo e rodapé:
+      </p>
+      <div class="ide-sim">
+        <pre><code>
+&lt;table&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Linguagem&lt;/th&gt;&lt;th&gt;Dificuldade&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Python&lt;/td&gt;&lt;td&gt;Fácil&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;JavaScript&lt;/td&gt;&lt;td&gt;Média&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;&lt;tr&gt;&lt;td colspan="2"&gt;Exemplo&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;
+&lt;/table&gt;
+        </code></pre>
+      </div>
+      <p>Imagens:</p>
+      <div class="ide-sim">
+        <pre><code>
+&lt;figure&gt;
+  &lt;img src="img/html-logo.png" alt="Logo HTML"&gt;
+  &lt;figcaption&gt;Logo oficial do HTML5&lt;/figcaption&gt;
+&lt;/figure&gt;
+        </code></pre>
+      </div>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> Para que serve o atributo <code>alt</code> nas imagens?</label><br>
+        <input type="radio" name="q3" value="a"> Mostrar legenda quando a imagem não carrega<br>
+        <input type="radio" name="q3" value="b"> Ajudar na acessibilidade para leitores de ecrã<br>
+        <input type="radio" name="q3" value="c"> Mudar o tamanho da imagem<br>
+        <button type="button" onclick="avaliarQuiz(3, 'b')">Responder</button>
+        <span class="feedback" id="feedback-q3"></span>
+      </form>
+    </section>
+<br><br>
+    <section>
+      <h2>Formulários</h2>
+      <p>
+        Formulários permitem recolher dados dos utilizadores. Usa sempre <code>&lt;label&gt;</code> para acessibilidade.
+      </p>
+      <div class="ide-sim">
+        <pre><code>
+&lt;form action="#" method="post"&gt;
+  &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+  &lt;input type="text" id="nome" name="nome"&gt;
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;
+        </code></pre>
+      </div>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> Qual é a utilidade do atributo <code>for</code> no &lt;label&gt;?</label><br>
+        <input type="radio" name="q4" value="a"> Ligar o label ao campo correspondente<br>
+        <input type="radio" name="q4" value="b"> Adicionar cor ao label<br>
+        <input type="radio" name="q4" value="c"> Serve para nada<br>
+        <button type="button" onclick="avaliarQuiz(4, 'a')">Responder</button>
+        <span class="feedback" id="feedback-q4"></span>
+      </form>
+    </section>
+<br><br>
+    <section>
+      <h2>Boas práticas & Dicas rápidas</h2>
+      <ul>
+        <li>Usa sempre elementos semânticos para melhorar SEO e acessibilidade.</li>
+        <li>Coloca o <code>lang="pt"</code> na tag <code>&lt;html&gt;</code> para definir o idioma.</li>
+        <li>Valida o teu HTML no <a href="https://validator.w3.org/" target="_blank">W3C Validator</a>.</li>
+        <li>O HTML não é sensível a maiúsculas/minúsculas, mas usa sempre minúsculas por convenção.</li>
+      </ul>
+    </section>
+<br><br>
+    <section>
+      <h2>Queres aprender mais?</h2>
+      <ul>
+        <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a></li>
+        <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Aprender a Programar</p>
+  </footer>
+  <script>
+    // Avaliação simples das respostas
+    function avaliarQuiz(num, certa) {
+      const radios = document.getElementsByName("q" + num);
+      let val = "";
+      for (const radio of radios) if (radio.checked) val = radio.value;
+      const feedback = document.getElementById("feedback-q" + num);
+      if (!val) { feedback.textContent = "Seleciona uma opção!"; feedback.style.color = "orange"; return; }
+      if (val === certa) { feedback.textContent = "Certo!"; feedback.style.color = "green"; }
+      else { feedback.textContent = "Errado!"; feedback.style.color = "red"; }
+    }
+  </script>
+</body>
+</html>

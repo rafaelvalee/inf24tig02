@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<linguagens>
+  <linguagem>
+    <nome>Python</nome>
+    <dificuldade>Fácil</dificuldade>
+    <uso>Automatização, Web, Ciência de Dados</uso>
+  </linguagem>
+  <linguagem>
+    <nome>JavaScript</nome>
+    <dificuldade>Média</dificuldade>
+    <uso>Web, Aplicações Mobile, Frontend</uso>
+  </linguagem>
+  <linguagem>
+    <nome>HTML</nome>
+    <dificuldade>Fácil</dificuldade>
+    <uso>Estruturação de páginas Web</uso>
+  </linguagem>
+  <linguagem>
+    <nome>XML</nome>
+    <dificuldade>Fácil</dificuldade>
+    <uso>Software empresarial, Android</uso>
+  </linguagem>
+</linguagens>

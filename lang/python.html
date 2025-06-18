@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python - Guia Interativo</title>
+  <link rel="stylesheet" href="style/estilos.css" />
+  <script defer src="python-quiz.js"></script>
+  <style>
+    /* Só para o exemplo: podes mover para o estilos.css */
+    .feedback { margin-left: 1rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="header-container">
+    <a href="index.html" class="logo-link">
+      <img src="img/logo.png" alt="LOGO" class="logo-img" loading="lazy">
+      <span class="logo-text">Aprender a Programar</span>
+    </a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="linguagens.html">Linguagens</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <section>
+      <h2>O que é o Python?</h2>
+      <p>
+        Python é uma linguagem de programação de alto nível, famosa pela sua simplicidade e legibilidade. É utilizada em áreas como web, automação, ciência de dados, inteligência artificial, scripts, etc.
+      </p>
+    </section>
+
+    <section>
+      <h2>Sintaxe e variáveis</h2>
+      <p>Em Python não precisas declarar tipos de variáveis. Exemplo:</p>
+      <div class="ide-sim">
+        <pre><code>
+nome = "Rafael"
+idade = 19
+altura = 1.78
+        </code></pre>
+      </div>
+      <ul>
+        <li>O tipo de cada variável é detetado automaticamente.</li>
+        <li>Podes mudar o valor e o tipo da variável em qualquer altura.</li>
+      </ul>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> Qual das opções <u>não</u> é válida em Python para dar o valor 5 à variável x?</label><br>
+        <input type="radio" name="q1" value="a"> x = 5<br>
+        <input type="radio" name="q1" value="b"> int x = 5<br>
+        <input type="radio" name="q1" value="c"> x=5<br>
+        <button type="button" onclick="avaliarQuiz(1, 'b')">Responder</button>
+        <span class="feedback" id="feedback-q1"></span>
+      </form>
+    </section>
+<br><br>
+    <section>
+      <h2>Tipos de dados básicos</h2>
+      <ul>
+        <li><strong>int</strong> – Números inteiros (ex: 1, -23)</li>
+        <li><strong>float</strong> – Números decimais (ex: 2.5, -0.1)</li>
+        <li><strong>str</strong> – Texto (ex: "Olá")</li>
+        <li><strong>bool</strong> – Booleano (True / False)</li>
+        <li><strong>list</strong> – Lista de elementos (ex: [1, 2, 3])</li>
+      </ul>
+      <div class="ide-sim">
+        <pre><code>
+valores = [10, 20, 30]
+nomes = ["Ana", "Miguel", "Sofia"]
+print(valores[1])  # Mostra 20
+        </code></pre>
+      </div>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> Qual é a saída do código <code>print(nomes[-1])</code>?</label><br>
+        <input type="radio" name="q2" value="Ana"> Ana<br>
+        <input type="radio" name="q2" value="Miguel"> Miguel<br>
+        <input type="radio" name="q2" value="Sofia"> Sofia<br>
+        <input type="radio" name="q2" value="Erro"> Dá erro<br>
+        <button type="button" onclick="avaliarQuiz(2, 'Sofia')">Responder</button>
+        <span class="feedback" id="feedback-q2"></span>
+      </form>
+    </section>
+<br><br>
+    <section>
+      <h2>Condicionais e ciclos</h2>
+      <p>Para tomar decisões:</p>
+      <div class="ide-sim">
+        <pre><code>
+idade = 19
+if idade >= 18:
+    print("Maior de idade")
+else:
+    print("Menor de idade")
+        </code></pre>
+      </div>
+      <p>Para repetir instruções:</p>
+      <div class="ide-sim">
+        <pre><code>
+for i in range(3):
+    print(i)
+        </code></pre>
+      </div>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> O que será impresso pelo ciclo acima?</label><br>
+        <input type="radio" name="q3" value="1 2 3"> 1 2 3<br>
+        <input type="radio" name="q3" value="0 1 2"> 0 1 2<br>
+        <input type="radio" name="q3" value="0 1 2 3"> 0 1 2 3<br>
+        <input type="radio" name="q3" value="Erro"> Dá erro<br>
+        <button type="button" onclick="avaliarQuiz(3, '0 1 2')">Responder</button>
+        <span class="feedback" id="feedback-q3"></span>
+      </form>
+    </section>
+<br><br>
+    <section>
+      <h2>Funções</h2>
+      <p>Funções servem para organizar o código em blocos reutilizáveis.</p>
+      <div class="ide-sim">
+        <pre><code>
+def soma(a, b):
+    return a + b
+
+resultado = soma(3, 4)
+print(resultado)
+        </code></pre>
+      </div>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> O que acontece se não colocares <code>return</code> numa função?</label><br>
+        <input type="radio" name="q4" value="a"> Dá erro<br>
+        <input type="radio" name="q4" value="b"> Retorna None automaticamente<br>
+        <input type="radio" name="q4" value="c"> A função repete-se<br>
+        <button type="button" onclick="avaliarQuiz(4, 'b')">Responder</button>
+        <span class="feedback" id="feedback-q4"></span>
+      </form>
+    </section>
+<br><br>
+    <section>
+      <h2>Tratamento de erros (try/except)</h2>
+      <p>Se escreveres código que pode falhar, usa try/except:</p>
+      <div class="ide-sim">
+        <pre><code>
+try:
+    n = int(input("Número: "))
+    print(10 / n)
+except ZeroDivisionError:
+    print("Não podes dividir por zero!")
+except ValueError:
+    print("Tens de escrever um número válido!")
+        </code></pre>
+      </div>
+      <form class="quiz-pergunta">
+        <label><strong>Pergunta:</strong> Se o utilizador escrever “zero”, o que é impresso?</label><br>
+        <input type="radio" name="q5" value="a"> Não podes dividir por zero!<br>
+        <input type="radio" name="q5" value="b"> Tens de escrever um número válido!<br>
+        <input type="radio" name="q5" value="c"> 0<br>
+        <input type="radio" name="q5" value="d"> Dá erro<br>
+        <button type="button" onclick="avaliarQuiz(5, 'a')">Responder</button>
+        <span class="feedback" id="feedback-q5"></span>
+      </form>
+    </section>
+<br><br>
+    <section>
+      <h2>Dicas úteis</h2>
+      <ul>
+        <li>Podes instalar pacotes externos com <code>pip</code> (ex: <code>pip install requests</code>).</li>
+        <li>Indentação é obrigatória em Python. Não uses tab misturado com espaços.</li>
+        <li>Comentários começam com <code>#</code>.</li>
+        <li>O Python é “case sensitive”: <code>Nome</code> ≠ <code>nome</code>.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Queres aprender mais?</h2>
+      <ul>
+        <li><a href="https://www.w3schools.com/python/" target="_blank">W3Schools Python Tutorial</a></li>
+        <li><a href="https://realpython.com/" target="_blank">Real Python</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Aprender a Programar</p>
+  </footer>
+  <script>
+    // Avaliação simples das respostas
+    function avaliarQuiz(num, certa) {
+      const radios = document.getElementsByName("q" + num);
+      let val = "";
+      for (const radio of radios) if (radio.checked) val = radio.value;
+      const feedback = document.getElementById("feedback-q" + num);
+      if (!val) { feedback.textContent = "Seleciona uma opção!"; feedback.style.color = "orange"; return; }
+      if (val === certa) { feedback.textContent = "Certo!"; feedback.style.color = "green"; }
+      else { feedback.textContent = "Errado!"; feedback.style.color = "red"; }
+    }
+  </script>
+</body>
+</html>
