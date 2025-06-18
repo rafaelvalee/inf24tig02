@@ -58,9 +58,9 @@ footer {
 }
 
 .logo-text {
-  color: #facc15;
+  color: #ffffff;
   font-weight: 700;
-  font-size: 1.18rem;
+
   letter-spacing: 1px;
   text-shadow: 0 2px 12px #0002;
 }
@@ -80,7 +80,7 @@ header nav a, nav a {
 }
 
 header nav a:hover, nav a:hover {
-  background: #facc15;
+  background: linear-gradient(90deg, #2563eb, #0ea5e9);
   color: #222;
 }
 
@@ -103,7 +103,7 @@ h2, h3 {
 }
 
 mark {
-  background-color: #facc15;
+  background-color: linear-gradient(90deg, #2563eb, #0ea5e9);
   padding: 0.2em;
 }
 
